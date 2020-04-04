@@ -1,0 +1,155 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime;
+
+<div class="container-fluid">
+    <div class="alert alert-dark text-center" role="alert">
+        <h3>Statistical Dashboard of Coronavirus COVID-19: Cases in Myanmar (4th April, 2020)</h3>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header text-center">
+                    လက်ရှိနောက်ဆုံးရအခြေအနေ
+                </div>
+                <div class="card-body">
+                    <div class="summaryBadge">
+                        <div class="divPositive">20</div>
+                        <div>ပိုးတွေ့လူနာ</div>
+                    </div>
+                    <div class="summaryBadge">
+                        <div class="divWatchCount">690</div>
+                        <div>စောင့်ကြည့် / သံသယလူနာ</div>
+                    </div>
+                    <div class="summaryBadge">
+                        <div class="divWaitingCount">688</div>
+                        <div>စောင့်ကြည့်လူနာ</div>
+                    </div>
+                    <div class="summaryBadge">
+                        <div class="divSuspectCount">2</div>
+                        <div>သံသယလူနာ</div>
+                    </div>
+                    <div class="summaryBadge">
+                        <div class="divNegative">614</div>
+                        <div>ပိုးမတွေ့လူနာ</div>
+                    </div>
+                    <div class="summaryBadge">
+                        <div class="divResultWaiting">54</div>
+                        <div>ဓာတ်ခွဲအဖြေစောင့်ဆိုင်း</div>
+                    </div>
+                    <div class="summaryBadge">
+                        <div class="divDeadCount">1</div>
+                        <div>ပိုးတွေ့သေဆုံးလူနာ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-7 ml-1 mr-1 border" style="text-align:center;">
+            <div id="map"></div>
+        </div>
+        <div class="col ml-1 mr-1 border">
+            <div class="card mt-2">
+                <div class="card-header text-center">
+                    Quarantine Station အလိုက် စောင့်ကြည့်လူနာစုစုပေါင်း
+                </div>
+                <div class="card-body" style="height:100%">
+                    <div class="divRegions">
+                        <table class="quarantineTable">
+                            <thead>
+                                <tr>
+                                    <th>Station</th>
+                                    <th>စုစုပေါင်း</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="quarantineStation">ဝေဘာဂီဆေးရုံ</td>
+                                    <td class="quarantineStationCount">86</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">ကန်တော်နဒီဆေးရုံ</td>
+                                    <td class="quarantineStationCount">26</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">အင်းစိန်အထွေထွေဆေးရုံ</td>
+                                    <td class="quarantineStationCount">45</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">မန္တလေးအထွေထွေဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">37</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">ရန်ကုန်အထွေထွေဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">31</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">တာချီလိတ်ဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">25</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">မြောက်ဥက္ကလာဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">40</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">လွိုင်ကော်ဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">19</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">ဖားအံဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">14</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">သင်္ကန်းကျွန်းဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">14</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">လားရှိုးဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">13</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">မူဆည်ဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">13</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">မကွေးဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">11</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">ကလေးဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">8</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">ကျောက်မဲဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">7</td>
+                                </tr>
+                                <tr>
+                                    <td class="quarantineStation">ကျောက်ဖြူဆေးရုံကြီး</td>
+                                    <td class="quarantineStationCount">6</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+
+        await JSRuntime.InvokeVoidAsync("loadMap", null);
+    }
+
+    
+}

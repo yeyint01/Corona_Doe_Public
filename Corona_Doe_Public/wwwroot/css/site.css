@@ -58,6 +58,11 @@ app {
         font-size: 1.1rem;
     }
 
+    .sidebar .navbar-brand img {
+        width: 200px !important;
+        height: auto;
+    }
+
     .sidebar .oi {
         width: 2rem;
         font-size: 1.1rem;
@@ -134,6 +139,99 @@ app {
     position: absolute;
     right: 0.75rem;
     top: 0.5rem;
+}
+
+.divRegions {
+    height: 100%;
+    overflow: auto;
+}
+
+.summaryBadge {
+    border: 1px solid rgba(255,255,255,0.25);
+    background-color: #d6d5d5;
+    border-radius: 3px;
+    padding: 2px;
+    margin:3px;
+    text-align: center;
+}
+
+.summaryBadge div {
+    padding:3px;
+    margin:0px;
+}
+
+.divSuspectCount {
+    font-size: 1.3em;
+    color: rgb(206, 104, 7);
+    font-weight:bold;
+}
+
+.divWaitingCount {
+    font-size: 1.3em;
+    color: rgb(232, 56, 8);
+    font-weight: bold;
+}
+
+.divWatchCount {
+    font-size: 1.3em;
+    color: rgb(232, 56, 8);
+    font-weight: bold;
+}
+
+.divDeadCount {
+    font-size: 1.3em;
+    color: rgb(230, 12, 219);
+    font-weight: bold;
+}
+
+.divPositive {
+    font-size: 1.3em;
+    color: #f20606;
+    font-weight: bold;
+}
+
+.divNegative {
+    font-size: 1.3em;
+    color: rgb(28, 160, 8);
+    font-weight: bold;
+}
+
+.divResultWaiting {
+    font-size: 1.3em;
+    color: rgb(11, 177, 232);
+    font-weight: bold;
+}
+
+.quarantineTable {
+    width: 100%;
+}
+
+.quarantineTable td {
+    border: 1px solid rgb(128, 128, 128);
+}
+
+.quarantineTable th {
+    border: 1px solid rgb(128, 128, 128);
+    background-color: rgb(35, 31, 31);
+    color: #ffffff;
+    padding: 5px;
+    font-size: 0.8em;
+}
+
+.quarantineStation {
+    padding: 5px;
+    font-size: 0.8em;
+}
+
+.quarantineStationCount{
+    padding: 5px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 767.98px) {
